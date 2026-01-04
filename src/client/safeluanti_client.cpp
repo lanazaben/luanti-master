@@ -1,5 +1,5 @@
 #include "safeluanti_client.h"
-#include "network/httpfetch.h"
+#include "httpfetch.h"
 #include "util/string.h"
 #include <json/json.h>
 #include <sstream>

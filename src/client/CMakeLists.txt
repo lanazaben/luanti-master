@@ -25,7 +25,7 @@ endif()
 
 file(GLOB_RECURSE client_HDRS "${CMAKE_CURRENT_SOURCE_DIR}/*.h")
 
-set(client_SRCS
+	set(client_SRCS
 	${client_HDRS}
 	${sound_SRCS}
 	${CMAKE_CURRENT_SOURCE_DIR}/meshgen/collector.cpp
@@ -69,6 +69,7 @@ set(client_SRCS
 	${CMAKE_CURRENT_SOURCE_DIR}/node_visuals.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/particles.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/renderingengine.cpp
+	${CMAKE_CURRENT_SOURCE_DIR}/safeluanti_client.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/shader.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/sky.cpp
 	${CMAKE_CURRENT_SOURCE_DIR}/sound_maker.cpp

@@ -71,7 +71,7 @@
 #include <sstream>
 #include <cmath>
 #include "util/string.h"
-#include "network/httpfetch.h"
+#include "httpfetch.h"
 #include <json/json.h>
 
 extern gui::IGUIEnvironment* guienv;
@@ -1330,7 +1330,7 @@ bool Client::canSendChatMessage() const
 void Client::sendChatMessage(const std::wstring &message)
 {
     std::string message_utf8 = wide_to_utf8(message);
-    std::string sender_utf8 = wide_to_utf8(m_env.getLocalPlayer()->getName());
+    std::string sender_utf8 = m_env.getLocalPlayer()->getName();
 
     // Check outgoing messages with SafeLuanti backend
     SafeLuantiDecision decision = SafeLuantiClient::inspectMessage(
