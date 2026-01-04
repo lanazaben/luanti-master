@@ -66,8 +66,6 @@ AppDir
 !/textures/base/
 /screenshots
 /sounds
-/mods/*
-!/mods/mods_here.txt
 /worlds/*
 !/worlds/worlds_here.txt
 /clientmods/*
