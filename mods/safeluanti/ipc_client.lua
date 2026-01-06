@@ -5,6 +5,15 @@ local socket = require("socket")
 
 local SAFE_LUANTI_HOST = core.settings:get("safeluanti_backend_host") or "127.0.0.1"
 local SAFE_LUANTI_PORT = tonumber(core.settings:get("safeluanti_backend_port")) or 5050
+local ok, socket = pcall(require, "socket")
+if not ok or not socket then
+	core.log("error", "[SafeLuanti] LuaSocket not available!")
+	return {
+		inspect_message = function(_, _, _, cb)
+			cb("ALLOW")
+		end
+	}
+end
 
 local function inspect_message(sender, message, child_id, callback)
 	-- Prepare payload
