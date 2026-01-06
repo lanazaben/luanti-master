@@ -124,7 +124,6 @@ static bool tcp_receive_line(SOCKET sock, std::string &line, int timeout_ms = 50
 {
     line.clear();
     char buffer[1];
-    
     // Set receive timeout
     struct timeval timeout;
     timeout.tv_sec = timeout_ms / 1000;
