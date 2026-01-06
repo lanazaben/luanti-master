@@ -153,7 +153,6 @@ SafeLuantiDecision SafeLuantiClient::inspectMessage(
     if (host.empty()) {
         host = "127.0.0.1";
     }
-    
     int port = g_settings->getS32("safeluanti_backend_port");
     if (port == 0) {
         port = 5050; // Default port matching mod
@@ -210,7 +209,6 @@ SafeLuantiDecision SafeLuantiClient::inspectMessage(
     } else if (decision_str == "FLAG") {
         return FLAG;
     }
-    
     // Default to ALLOW (also handles "ALLOW" string)
     return ALLOW;
 }
