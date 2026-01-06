@@ -1,7 +1,7 @@
 -- SafeLuanti Moderation Integration
 -- Intercepts chat messages and sends them to the SafeLuanti backend for analysis
 
-local http_client = dofile(core.get_modpath("safeluanti") .. "/http.lua")
+local ipc_client = dofile(core.get_modpath("safeluanti") .. "/ipc_client.lua")
 
 -- Track blocked users per child (username -> childId -> blocked)
 local blocked_users = {}
@@ -73,7 +73,7 @@ core.register_on_chat_message(function(name, message)
 	}
 
 	-- Send to moderation backend
-	http_client.inspect_message(name, message, child_id, function(decision, data)
+    ipc_client.inspect_message(name, message, child_id, function(decision, data)
 		local pending = pending_messages[message_id]
 		if not pending then
 			return -- Message already handled or expired
