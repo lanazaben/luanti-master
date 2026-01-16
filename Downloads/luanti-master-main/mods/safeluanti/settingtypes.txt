@@ -1,0 +1,2 @@
+safeluanti_backend_host (SafeLuanti backend host) string 127.0.0.1
+safeluanti_backend_port (SafeLuanti backend port) int 5050
